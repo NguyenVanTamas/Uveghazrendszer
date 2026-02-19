@@ -8,5 +8,28 @@ namespace Uveghazrendszer
 {
 	internal class NovenyFaj
 	{
+		string nev;
+		int vizigeny; // max 100, azon túl egészségi állapota romlik
+		int egeszsegiAllapot; // 0-10, ahol 0: elpusztult
+		int optimalisSuruseg;
+
+		public NovenyFaj(string nev, int vizigeny, int egeszsegiAllapot, int optimalisSuruseg)
+		{
+			this.nev = nev;
+			this.vizigeny = vizigeny;
+			this.egeszsegiAllapot = egeszsegiAllapot;
+			this.optimalisSuruseg = optimalisSuruseg;
+		}
+
+		public string Azonosito { get => this.nev.Substring(0,3); }
+		public string Nev { get => nev; set => nev = value; }
+		public int Vizigeny { get => vizigeny; set => vizigeny = value; }
+		public int EgeszsegiAllapot { get => egeszsegiAllapot; set => egeszsegiAllapot = value; }
+		public int OptimalisSuruseg { get => optimalisSuruseg; set => optimalisSuruseg = value; }
+
+		public override string ToString()
+		{
+			return $"{this.nev} ({this.Azonosito}) {this.vizigeny} {this.egeszsegiAllapot}";
+		}
 	}
 }
