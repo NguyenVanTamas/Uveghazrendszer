@@ -57,10 +57,7 @@ namespace Uveghazrendszer
 				}
 				return true;
 			}
-			else
-			{
 				return false;
-			}
 		}
 
 		public void Noveles(int egyedSzam)
@@ -81,6 +78,11 @@ namespace Uveghazrendszer
 		{
 			this.egyedSzam = 0;
 			this.noveny = null;
+		}
+
+		public override string ToString()
+		{
+			return $"{this.noveny.Nev} {this.egyedSzam} db, állapot: {this.Noveny.EgeszsegiAllapot}";
 		}
 	}
 }
